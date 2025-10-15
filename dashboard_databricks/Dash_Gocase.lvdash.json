@@ -1,10 +1,10 @@
 {
   "datasets": [
     {
-      "name": "e71fcf5f",
-      "displayName": "vendas_diarias",
+      "name": "c924d291",
+      "displayName": "produtos_ruptura_unicos",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.vendas_diarias"
+        "SELECT * FROM transacional.case_gocase.produtos_ruptura_unicos"
       ]
     },
     {
@@ -15,10 +15,24 @@
       ]
     },
     {
-      "name": "12b77158",
+      "name": "1307b493",
       "displayName": "analise_frete",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.analise_frete"
+        "select * from transacional.case_gocase.demanda_historica limit 100"
+      ]
+    },
+    {
+      "name": "f6eb1850",
+      "displayName": "ruptura_critica_faturamento_top20",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.ruptura_critica_faturamento_top20"
+      ]
+    },
+    {
+      "name": "24a849fd",
+      "displayName": "analise_frete_dia",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.analise_frete_dia"
       ]
     },
     {
@@ -26,34 +40,6 @@
       "displayName": "desempenho_transportadora",
       "queryLines": [
         "SELECT * FROM transacional.case_gocase.desempenho_transportadora"
-      ]
-    },
-    {
-      "name": "2ef6821a",
-      "displayName": "faturamento_por_categoria",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.faturamento_por_categoria"
-      ]
-    },
-    {
-      "name": "6c7d9331",
-      "displayName": "medias_logisticas",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.medias_logisticas"
-      ]
-    },
-    {
-      "name": "20f2ea64",
-      "displayName": "df_supply",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.df_supply"
-      ]
-    },
-    {
-      "name": "7c29058b",
-      "displayName": "ruptura_critica",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.ruptura_critica"
       ]
     },
     {
@@ -71,10 +57,10 @@
       ]
     },
     {
-      "name": "f8af20fd",
-      "displayName": "pedidos",
+      "name": "12b77158",
+      "displayName": "analise_frete",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.pedidos"
+        "SELECT * FROM transacional.case_gocase.analise_frete"
       ]
     },
     {
@@ -85,35 +71,75 @@
       ]
     },
     {
-      "name": "c924d291",
-      "displayName": "produtos_ruptura_unicos",
+      "name": "7c29058b",
+      "displayName": "ruptura_critica",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.produtos_ruptura_unicos"
+        "SELECT * FROM transacional.case_gocase.ruptura_critica"
       ]
     },
     {
-      "name": "1307b493",
-      "displayName": "analise_frete",
+      "name": "e71fcf5f",
+      "displayName": "vendas_diarias",
       "queryLines": [
-        "select * from transacional.case_gocase.demanda_historica limit 100"
+        "SELECT * FROM transacional.case_gocase.vendas_diarias"
       ]
     },
     {
-      "name": "24a849fd",
-      "displayName": "analise_frete_dia",
+      "name": "6c7d9331",
+      "displayName": "medias_logisticas",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.analise_frete_dia"
+        "SELECT * FROM transacional.case_gocase.medias_logisticas"
       ]
     },
     {
-      "name": "f6eb1850",
-      "displayName": "ruptura_critica_faturamento_top20",
+      "name": "f8af20fd",
+      "displayName": "pedidos",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.ruptura_critica_faturamento_top20"
+        "SELECT * FROM transacional.case_gocase.pedidos"
+      ]
+    },
+    {
+      "name": "20f2ea64",
+      "displayName": "df_supply",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.df_supply"
+      ]
+    },
+    {
+      "name": "2ef6821a",
+      "displayName": "faturamento_por_categoria",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.faturamento_por_categoria"
       ]
     }
   ],
   "pages": [
+    {
+      "name": "0a384ddc",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "e855fe55",
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {},
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    },
     {
       "name": "5450d8e2",
       "displayName": "Untitled page",
@@ -1153,32 +1179,6 @@
         }
       ],
       "pageType": "PAGE_TYPE_CANVAS"
-    },
-    {
-      "name": "0a384ddc",
-      "displayName": "Global Filters",
-      "layout": [
-        {
-          "widget": {
-            "name": "e855fe55",
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-single-select",
-              "encodings": {},
-              "frame": {
-                "showTitle": true
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 0,
-            "width": 1,
-            "height": 2
-          }
-        }
-      ],
-      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
     }
   ],
   "uiSettings": {
