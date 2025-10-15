@@ -1,10 +1,17 @@
 {
   "datasets": [
     {
+<<<<<<< HEAD
       "name": "1307b493",
       "displayName": "analise_frete",
       "queryLines": [
         "select * from transacional.case_gocase.demanda_historica limit 100"
+=======
+      "name": "c924d291",
+      "displayName": "produtos_ruptura_unicos",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.produtos_ruptura_unicos"
+>>>>>>> 75d7c71ea17a33b6362af0b7da92b85d290ec5c4
       ]
     },
     {
@@ -15,10 +22,31 @@
       ]
     },
     {
+<<<<<<< HEAD
       "name": "b034a725",
       "displayName": "df_itens",
       "queryLines": [
         "SELECT * FROM transacional.case_gocase.df_itens"
+=======
+      "name": "1307b493",
+      "displayName": "analise_frete",
+      "queryLines": [
+        "select * from transacional.case_gocase.demanda_historica limit 100"
+      ]
+    },
+    {
+      "name": "f6eb1850",
+      "displayName": "ruptura_critica_faturamento_top20",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.ruptura_critica_faturamento_top20"
+      ]
+    },
+    {
+      "name": "24a849fd",
+      "displayName": "analise_frete_dia",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.analise_frete_dia"
+>>>>>>> 75d7c71ea17a33b6362af0b7da92b85d290ec5c4
       ]
     },
     {
@@ -29,6 +57,7 @@
       ]
     },
     {
+<<<<<<< HEAD
       "name": "7c29058b",
       "displayName": "ruptura_critica",
       "queryLines": [
@@ -38,11 +67,44 @@
     {
       "name": "c924d291",
       "displayName": "produtos_ruptura_unicos",
+=======
+      "name": "763b5c51",
+      "displayName": "vendas",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.produtos_ruptura_unicos"
+        "SELECT * FROM transacional.case_gocase.vendas"
       ]
     },
     {
+      "name": "a083c8e5",
+      "displayName": "faturamento_por_produto",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.faturamento_por_produto"
+      ]
+    },
+    {
+      "name": "12b77158",
+      "displayName": "analise_frete",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.analise_frete"
+      ]
+    },
+    {
+      "name": "b034a725",
+      "displayName": "df_itens",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.df_itens"
+      ]
+    },
+    {
+      "name": "7c29058b",
+      "displayName": "ruptura_critica",
+>>>>>>> 75d7c71ea17a33b6362af0b7da92b85d290ec5c4
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.ruptura_critica"
+      ]
+    },
+    {
+<<<<<<< HEAD
       "name": "a083c8e5",
       "displayName": "faturamento_por_produto",
       "queryLines": [
@@ -68,16 +130,23 @@
       "displayName": "faturamento_por_categoria",
       "queryLines": [
         "SELECT * FROM transacional.case_gocase.faturamento_por_categoria"
-      ]
-    },
-    {
-      "name": "24a849fd",
-      "displayName": "analise_frete_dia",
+=======
+      "name": "e71fcf5f",
+      "displayName": "vendas_diarias",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.analise_frete_dia"
+        "SELECT * FROM transacional.case_gocase.vendas_diarias"
+>>>>>>> 75d7c71ea17a33b6362af0b7da92b85d290ec5c4
       ]
     },
     {
+      "name": "6c7d9331",
+      "displayName": "medias_logisticas",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.medias_logisticas"
+      ]
+    },
+    {
+<<<<<<< HEAD
       "name": "e71fcf5f",
       "displayName": "vendas_diarias",
       "queryLines": [
@@ -94,8 +163,26 @@
     {
       "name": "f6eb1850",
       "displayName": "ruptura_critica_faturamento_top20",
+=======
+      "name": "f8af20fd",
+      "displayName": "pedidos",
+>>>>>>> 75d7c71ea17a33b6362af0b7da92b85d290ec5c4
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.ruptura_critica_faturamento_top20"
+        "SELECT * FROM transacional.case_gocase.pedidos"
+      ]
+    },
+    {
+      "name": "20f2ea64",
+      "displayName": "df_supply",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.df_supply"
+      ]
+    },
+    {
+      "name": "2ef6821a",
+      "displayName": "faturamento_por_categoria",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.faturamento_por_categoria"
       ]
     },
     {
@@ -1188,6 +1275,7 @@
             "width": 2,
             "height": 7
           }
+<<<<<<< HEAD
         },
         {
           "widget": {
@@ -1331,6 +1419,8 @@
             "width": 3,
             "height": 9
           }
+=======
+>>>>>>> 75d7c71ea17a33b6362af0b7da92b85d290ec5c4
         }
       ],
       "pageType": "PAGE_TYPE_CANVAS"
