@@ -1,31 +1,10 @@
 {
   "datasets": [
     {
-      "name": "1307b493",
-      "displayName": "analise_frete",
+      "name": "2ef6821a",
+      "displayName": "faturamento_por_categoria",
       "queryLines": [
-        "select * from transacional.case_gocase.demanda_historica limit 100"
-      ]
-    },
-    {
-      "name": "0bfc2e58",
-      "displayName": "demanda_historica",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.demanda_historica"
-      ]
-    },
-    {
-      "name": "b034a725",
-      "displayName": "df_itens",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.df_itens"
-      ]
-    },
-    {
-      "name": "03f4240e",
-      "displayName": "desempenho_transportadora",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.desempenho_transportadora"
+        "SELECT * FROM transacional.case_gocase.faturamento_por_categoria"
       ]
     },
     {
@@ -36,52 +15,10 @@
       ]
     },
     {
-      "name": "c924d291",
-      "displayName": "produtos_ruptura_unicos",
+      "name": "03f4240e",
+      "displayName": "desempenho_transportadora",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.produtos_ruptura_unicos"
-      ]
-    },
-    {
-      "name": "a083c8e5",
-      "displayName": "faturamento_por_produto",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.faturamento_por_produto"
-      ]
-    },
-    {
-      "name": "6c7d9331",
-      "displayName": "medias_logisticas",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.medias_logisticas"
-      ]
-    },
-    {
-      "name": "763b5c51",
-      "displayName": "vendas",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.vendas"
-      ]
-    },
-    {
-      "name": "2ef6821a",
-      "displayName": "faturamento_por_categoria",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.faturamento_por_categoria"
-      ]
-    },
-    {
-      "name": "24a849fd",
-      "displayName": "analise_frete_dia",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.analise_frete_dia"
-      ]
-    },
-    {
-      "name": "e71fcf5f",
-      "displayName": "vendas_diarias",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.vendas_diarias"
+        "SELECT * FROM transacional.case_gocase.desempenho_transportadora"
       ]
     },
     {
@@ -92,24 +29,38 @@
       ]
     },
     {
-      "name": "f6eb1850",
-      "displayName": "ruptura_critica_faturamento_top20",
+      "name": "b034a725",
+      "displayName": "df_itens",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.ruptura_critica_faturamento_top20"
+        "SELECT * FROM transacional.case_gocase.df_itens"
       ]
     },
     {
-      "name": "12b77158",
-      "displayName": "analise_frete",
+      "name": "a083c8e5",
+      "displayName": "faturamento_por_produto",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.analise_frete"
+        "SELECT * FROM transacional.case_gocase.faturamento_por_produto"
       ]
     },
     {
-      "name": "20f2ea64",
-      "displayName": "df_supply",
+      "name": "e71fcf5f",
+      "displayName": "vendas_diarias",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.df_supply"
+        "SELECT * FROM transacional.case_gocase.vendas_diarias"
+      ]
+    },
+    {
+      "name": "763b5c51",
+      "displayName": "vendas",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.vendas"
+      ]
+    },
+    {
+      "name": "c924d291",
+      "displayName": "produtos_ruptura_unicos",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.produtos_ruptura_unicos"
       ]
     },
     {
@@ -132,35 +83,58 @@
         "ORDER BY a.created_at_data DESC\r\n",
         "\r\n"
       ]
+    },
+    {
+      "name": "24a849fd",
+      "displayName": "analise_frete_dia",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.analise_frete_dia"
+      ]
+    },
+    {
+      "name": "20f2ea64",
+      "displayName": "df_supply",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.df_supply"
+      ]
+    },
+    {
+      "name": "6c7d9331",
+      "displayName": "medias_logisticas",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.medias_logisticas"
+      ]
+    },
+    {
+      "name": "f6eb1850",
+      "displayName": "ruptura_critica_faturamento_top20",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.ruptura_critica_faturamento_top20"
+      ]
+    },
+    {
+      "name": "12b77158",
+      "displayName": "analise_frete",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.analise_frete"
+      ]
+    },
+    {
+      "name": "0bfc2e58",
+      "displayName": "demanda_historica",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.demanda_historica"
+      ]
+    },
+    {
+      "name": "1307b493",
+      "displayName": "analise_frete",
+      "queryLines": [
+        "select * from transacional.case_gocase.demanda_historica limit 100"
+      ]
     }
   ],
   "pages": [
-    {
-      "name": "0a384ddc",
-      "displayName": "Global Filters",
-      "layout": [
-        {
-          "widget": {
-            "name": "e855fe55",
-            "spec": {
-              "version": 2,
-              "widgetType": "filter-single-select",
-              "encodings": {},
-              "frame": {
-                "showTitle": true
-              }
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 0,
-            "width": 1,
-            "height": 2
-          }
-        }
-      ],
-      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
-    },
     {
       "name": "5450d8e2",
       "displayName": "Untitled page",
@@ -1337,6 +1311,32 @@
         }
       ],
       "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "0a384ddc",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "e855fe55",
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {},
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
     }
   ],
   "uiSettings": {
