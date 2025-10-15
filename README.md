@@ -79,56 +79,43 @@ graph LR
 ## 📂 Estrutura de Pastas 
 ```
 Case/
-├── notebooks/                  # Notebooks de ingestão e transformação
-│   ├── 00_ingestao_google_sheets.py
-│   ├── 10_transform_silver.py
-│   └── 20_gold_metrics.sql
-├── jobs/                       # Definições de jobs (JSON) p/ Databricks Jobs
-│   └── monthly_job.json
-├── sql/                        # Consultas usadas por dashboards/n8n
-│   ├── dashboard_orders.sql
-│   └── report_supply.sql
-├── dashboards/                 # Export/descrição de painéis (Lakeview)
-│   └── readme.md
-├── n8n/                        # Workflow do n8n (export JSON) e templates
-│   ├── workflow_relatorio_ia.json
-│   └── templates/
-├── docs/                       # Documentação extra (diagrama, dicionário de dados)
-│   ├── architecture.mmd
-│   └── data_dictionary.md
-├── scripts/                    # Utilitários (ex.: carga inicial, testes locais)
-│   └── bootstrap.sh
-├── .env.example                # Variáveis de ambiente (para dev/local)
+├── dashboard_databricks/ 
+│   ├── Dash_Gocase.lvdash.json       # dashboard databricks
+│   └── Dashboard_Databricks.jpg      # print dashboard databricks
+│
+├── job_databricks/             
+│   ├── Case_Gocase.json        # json com o job do databricks para reprodução.
+│   └── job_databricks.jpg      # print job databricks
+│    
+├── workflow/                   
+│   ├── workflow_n8n.json    # json workflow do n8n para reprodução.
+│   └── workflow_n8n.jpg     # print workflow n8n
+│  
+├── analise.ipynb            # notebook com os codigos em pyspark para análise
+├── ingestor.ipynb           # notebook com os codigos de extração csv
+├── utils.py                 # funções python
+├── Case_Gocase.drawio       # arquitetura
 └── README.md
+
 ```
 
 ## 🚀 Como rodar
 
-### 1) Ingestão (Google Sheets → Bronze)
-- Execute o notebook `notebooks/00_ingestao_google_sheets.py` em um **cluster**.
-- Parametrize com os IDs das planilhas e destino (`catalog.schema.tabela`).
-- Saída esperada: tabelas `bronze_itens` e `bronze_pedidos` em Delta.
+### 1) Ingestão (Google Sheets → CSV-Catalog)
+- Execute o notebook `ingestor.ipynb` em um **cluster** databricks.
 
-### 2) Transformações (Bronze → Silver/Gold)
-- Execute `notebooks/10_transform_silver.py` e `20_gold_metrics.sql`.
-- Cria tabelas/visualizações otimizadas para consumo por dashboards e n8n.
+### 2) Análises (CSV-Catalog → Delta Lake)
+- Execute `analise.ipynb `.
 
 ### 3) Agendamento (Monthly)
-- Crie um **Job** no Databricks com **cron** `0 10 1 * *` (10:00, dia 1 de cada mês). 
-- Encadeie as tarefas: `00_ingestao` → `10_transform` → `20_gold`.
-- Defina **dependências** e **alertas** (notificações por e‑mail/Slack, se desejado).
+- Crie um **Job** agendado no Databricks com `job_databricks/Case_Gocase.json`. 
 
 ### 4) Dashboards
-- Publique consultas de `sql/` no **Databricks SQL** ou **Lakeview**.
-- Conecte às tabelas Delta **gold**.
+- Use o `Dash_Gocase.lvdash.json` no **Databricks** para gerar o dashboard.
 
 ### 5) n8n — Relatório IA (PDF → E‑mail)
-- Importe `n8n/workflow_relatorio_ia.json` no n8n.
-- Configure credenciais de **Databricks SQL** (REST API) e **E‑mail** (SMTP/Provider).
-- Ajuste o nó que consulta `sql/report_supply.sql` e `sql/dashboard_orders.sql`.
-- Formate o conteúdo (Markdown/HTML) e gere PDF → **Enviar** para `REPORT_EMAIL_TO`.
-- Opcional: acione o workflow via **Webhook** ou por **gatilho** ao término do Job no Databricks.
-
+- Importe `workflow/workflow_n8n.json` no n8n para criação do work flow.
+- Configure as credenciais das APIs
 ---
 
 ## 📬 Contato
