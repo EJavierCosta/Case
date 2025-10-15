@@ -61,3 +61,72 @@ Desenvolvido por [**EJavierCosta**](https://github.com/EJavierCosta)
 Esse já está pronto para ser salvo como README.md.
 👉 Quer que eu adicione também badges (shields.io) de linguagem, versão e status de build para deixar o README ainda mais profissional?
 
+
+# 📊 Business Case - Dados (E-commerce B2C)
+
+## 🌐 Contexto da Empresa
+Somos um **e-commerce B2C em rápido crescimento**, com múltiplas categorias de produtos e uma operação logística robusta.  
+Atualmente, enfrentamos desafios relacionados a **vendas, supply chain e logística**, e buscamos estruturar nossa área de dados para apoiar decisões estratégicas.
+
+---
+
+## 🎯 Objetivo do Case
+O desafio consiste em realizar um **diagnóstico inicial das bases de dados** fornecidas (Pedidos, Itens dos Pedidos e Supply), gerando **insights estratégicos** que auxiliem a empresa a:
+
+- Melhorar a **conversão de vendas**  
+- Reduzir **rupturas de estoque**  
+- Otimizar a **logística e prazos de entrega**  
+
+---
+
+## 🛠️ Arquitetura e Stack Utilizada
+A solução foi desenhada com foco em **escalabilidade, automação e geração de insights**:
+
+| Componente | Ferramenta | Propósito |
+|------------|------------|-----------|
+| **Orquestração & Workflow** | n8n | Automação e agendamento de ponta a ponta |
+| **Processamento de Dados** | PySpark | Processamento eficiente de grandes volumes de dados |
+| **Fonte de Dados** | CSVs (Google Drive) | Simulação de ingestão de dados brutos |
+| **Gerenciamento de Estado** | n8n Data Store | Controle de ingestão incremental (CDC simulado) |
+| **Logs & Metadados** | Python/Logbook | Monitoramento e rastreabilidade do pipeline |
+
+---
+
+## ⚙️ Fluxo de Trabalho Automatizado
+1. **Trigger Agendado (n8n)** → inicia o processo  
+2. **Leitura da Marca d’Água (HWM)** → garante ingestão incremental  
+3. **Processamento (PySpark)** → transformação, cruzamento e cálculo de KPIs  
+4. **Atualização do HWM** → persistência no Data Store  
+5. **Geração de Relatório (PDF/Email)** → envio automático para stakeholders  
+
+---
+
+## 📈 Análises e Insights
+
+### 🔹 Vendas & Conversão
+- Distribuição temporal dos pedidos e identificação de **picos sazonais**  
+- Relação entre **descontos e volume de vendas**  
+- Produtos/categorias com maior impacto no **faturamento**  
+
+### 🔹 Supply Chain & Estoque
+- Identificação de **produtos críticos** e rupturas  
+- Eficiência da **reposição de estoque** e gargalos na cadeia  
+- Correlação entre **problemas de supply e cancelamentos**  
+
+### 🔹 Logística & Entregas
+- Variação dos **tempos de entrega por região**  
+- Taxa de **cancelamento de pedidos** e causas potenciais  
+- Padrões de **atrasos recorrentes** em períodos/categorias  
+
+---
+
+## ⭐ Recomendações Estratégicas
+1. **Monitoramento em tempo quase real (Kafka + PySpark)** para rupturas de estoque  
+2. **Alertas automatizados (Slack/Email)** para estoque crítico  
+3. **Versionamento e colaboração via GitHub** para máxima transparência  
+4. **Modelos preditivos** para prever sazonalidade e otimizar promoções  
+
+---
+
+## 📂 Estrutura do Repositório
+
