@@ -1,10 +1,10 @@
 {
   "datasets": [
     {
-      "name": "e71fcf5f",
-      "displayName": "vendas_diarias",
+      "name": "1307b493",
+      "displayName": "analise_frete",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.vendas_diarias"
+        "select * from transacional.case_gocase.demanda_historica limit 100"
       ]
     },
     {
@@ -15,10 +15,10 @@
       ]
     },
     {
-      "name": "12b77158",
-      "displayName": "analise_frete",
+      "name": "b034a725",
+      "displayName": "df_itens",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.analise_frete"
+        "SELECT * FROM transacional.case_gocase.df_itens"
       ]
     },
     {
@@ -29,59 +29,10 @@
       ]
     },
     {
-      "name": "2ef6821a",
-      "displayName": "faturamento_por_categoria",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.faturamento_por_categoria"
-      ]
-    },
-    {
-      "name": "6c7d9331",
-      "displayName": "medias_logisticas",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.medias_logisticas"
-      ]
-    },
-    {
-      "name": "20f2ea64",
-      "displayName": "df_supply",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.df_supply"
-      ]
-    },
-    {
       "name": "7c29058b",
       "displayName": "ruptura_critica",
       "queryLines": [
         "SELECT * FROM transacional.case_gocase.ruptura_critica"
-      ]
-    },
-    {
-      "name": "763b5c51",
-      "displayName": "vendas",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.vendas"
-      ]
-    },
-    {
-      "name": "a083c8e5",
-      "displayName": "faturamento_por_produto",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.faturamento_por_produto"
-      ]
-    },
-    {
-      "name": "f8af20fd",
-      "displayName": "pedidos",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.pedidos"
-      ]
-    },
-    {
-      "name": "b034a725",
-      "displayName": "df_itens",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.df_itens"
       ]
     },
     {
@@ -92,10 +43,31 @@
       ]
     },
     {
-      "name": "1307b493",
-      "displayName": "analise_frete",
+      "name": "a083c8e5",
+      "displayName": "faturamento_por_produto",
       "queryLines": [
-        "select * from transacional.case_gocase.demanda_historica limit 100"
+        "SELECT * FROM transacional.case_gocase.faturamento_por_produto"
+      ]
+    },
+    {
+      "name": "6c7d9331",
+      "displayName": "medias_logisticas",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.medias_logisticas"
+      ]
+    },
+    {
+      "name": "763b5c51",
+      "displayName": "vendas",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.vendas"
+      ]
+    },
+    {
+      "name": "2ef6821a",
+      "displayName": "faturamento_por_categoria",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.faturamento_por_categoria"
       ]
     },
     {
@@ -106,14 +78,89 @@
       ]
     },
     {
+      "name": "e71fcf5f",
+      "displayName": "vendas_diarias",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.vendas_diarias"
+      ]
+    },
+    {
+      "name": "f8af20fd",
+      "displayName": "pedidos",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.pedidos"
+      ]
+    },
+    {
       "name": "f6eb1850",
       "displayName": "ruptura_critica_faturamento_top20",
       "queryLines": [
         "SELECT * FROM transacional.case_gocase.ruptura_critica_faturamento_top20"
       ]
+    },
+    {
+      "name": "12b77158",
+      "displayName": "analise_frete",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.analise_frete"
+      ]
+    },
+    {
+      "name": "20f2ea64",
+      "displayName": "df_supply",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.df_supply"
+      ]
+    },
+    {
+      "name": "21befe8c",
+      "displayName": "vendas por material",
+      "queryLines": [
+        "SELECT a.created_at_data,\r\n",
+        "       a.material_name,\r\n",
+        "       COUNT(*) AS numero_vendas\r\n",
+        "FROM transacional.case_gocase.vendas a\r\n",
+        "JOIN (\r\n",
+        "    SELECT material_name\r\n",
+        "    FROM transacional.case_gocase.faturamento_por_produto\r\n",
+        "    ORDER BY faturamento_total DESC\r\n",
+        "    LIMIT 10\r\n",
+        ") b\r\n",
+        "ON a.material_name = b.material_name\r\n",
+        "GROUP BY a.created_at_data,\r\n",
+        "         a.material_name\r\n",
+        "ORDER BY a.created_at_data DESC\r\n",
+        "\r\n"
+      ]
     }
   ],
   "pages": [
+    {
+      "name": "0a384ddc",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "e855fe55",
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {},
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    },
     {
       "name": "5450d8e2",
       "displayName": "Untitled page",
@@ -315,7 +362,7 @@
           },
           "position": {
             "x": 0,
-            "y": 18,
+            "y": 24,
             "width": 2,
             "height": 7
           }
@@ -412,7 +459,7 @@
           },
           "position": {
             "x": 2,
-            "y": 18,
+            "y": 24,
             "width": 2,
             "height": 7
           }
@@ -479,7 +526,7 @@
           },
           "position": {
             "x": 0,
-            "y": 35,
+            "y": 41,
             "width": 3,
             "height": 9
           }
@@ -546,7 +593,7 @@
           },
           "position": {
             "x": 3,
-            "y": 35,
+            "y": 41,
             "width": 3,
             "height": 9
           }
@@ -596,6 +643,28 @@
                     "hideTitle": false
                   }
                 },
+                "color": {
+                  "fieldName": "tipo_frete",
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": "Grátis",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": "Pago",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 7
+                        }
+                      }
+                    ]
+                  }
+                },
                 "extra": [
                   {
                     "fieldName": "tipo_frete"
@@ -606,7 +675,7 @@
           },
           "position": {
             "x": 0,
-            "y": 26,
+            "y": 32,
             "width": 6,
             "height": 8
           }
@@ -645,7 +714,7 @@
           },
           "position": {
             "x": 0,
-            "y": 46,
+            "y": 52,
             "width": 1,
             "height": 3
           }
@@ -684,7 +753,7 @@
           },
           "position": {
             "x": 1,
-            "y": 46,
+            "y": 52,
             "width": 1,
             "height": 3
           }
@@ -743,7 +812,7 @@
           },
           "position": {
             "x": 0,
-            "y": 49,
+            "y": 55,
             "width": 3,
             "height": 6
           }
@@ -802,7 +871,7 @@
           },
           "position": {
             "x": 3,
-            "y": 49,
+            "y": 55,
             "width": 3,
             "height": 6
           }
@@ -841,7 +910,7 @@
           },
           "position": {
             "x": 0,
-            "y": 57,
+            "y": 63,
             "width": 1,
             "height": 3
           }
@@ -880,7 +949,7 @@
           },
           "position": {
             "x": 1,
-            "y": 57,
+            "y": 63,
             "width": 1,
             "height": 3
           }
@@ -928,13 +997,14 @@
                 }
               },
               "frame": {
-                "showTitle": false
+                "showTitle": true,
+                "title": "% ATRASO"
               }
             }
           },
           "position": {
             "x": 0,
-            "y": 60,
+            "y": 66,
             "width": 3,
             "height": 9
           }
@@ -998,7 +1068,7 @@
           },
           "position": {
             "x": 0,
-            "y": 17,
+            "y": 23,
             "width": 6,
             "height": 1
           }
@@ -1014,7 +1084,7 @@
           },
           "position": {
             "x": 0,
-            "y": 25,
+            "y": 31,
             "width": 6,
             "height": 1
           }
@@ -1030,7 +1100,7 @@
           },
           "position": {
             "x": 0,
-            "y": 34,
+            "y": 40,
             "width": 6,
             "height": 1
           }
@@ -1046,25 +1116,9 @@
           },
           "position": {
             "x": 0,
-            "y": 44,
+            "y": 50,
             "width": 6,
             "height": 2
-          }
-        },
-        {
-          "widget": {
-            "name": "93f8a19f",
-            "multilineTextboxSpec": {
-              "lines": [
-                ""
-              ]
-            }
-          },
-          "position": {
-            "x": 2,
-            "y": 46,
-            "width": 4,
-            "height": 3
           }
         },
         {
@@ -1078,25 +1132,9 @@
           },
           "position": {
             "x": 0,
-            "y": 55,
+            "y": 61,
             "width": 6,
             "height": 2
-          }
-        },
-        {
-          "widget": {
-            "name": "0b5c079a",
-            "multilineTextboxSpec": {
-              "lines": [
-                ""
-              ]
-            }
-          },
-          "position": {
-            "x": 3,
-            "y": 57,
-            "width": 3,
-            "height": 12
           }
         },
         {
@@ -1146,39 +1184,156 @@
           },
           "position": {
             "x": 4,
-            "y": 18,
+            "y": 24,
             "width": 2,
             "height": 7
           }
-        }
-      ],
-      "pageType": "PAGE_TYPE_CANVAS"
-    },
-    {
-      "name": "0a384ddc",
-      "displayName": "Global Filters",
-      "layout": [
+        },
         {
           "widget": {
-            "name": "e855fe55",
+            "name": "cd0c3f64",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "21befe8c",
+                  "fields": [
+                    {
+                      "name": "material_name",
+                      "expression": "`material_name`"
+                    },
+                    {
+                      "name": "countdistinct(material_name)",
+                      "expression": "COUNT(DISTINCT `material_name`)"
+                    },
+                    {
+                      "name": "daily(created_at_data)",
+                      "expression": "DATE_TRUNC(\"DAY\", `created_at_data`)"
+                    },
+                    {
+                      "name": "numero_vendas",
+                      "expression": "`numero_vendas`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
             "spec": {
-              "version": 2,
-              "widgetType": "filter-single-select",
-              "encodings": {},
-              "frame": {
-                "showTitle": true
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "daily(created_at_data)",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "axis": {
+                    "hideTitle": false,
+                    "hideLabels": false,
+                    "hideGrid": false
+                  }
+                },
+                "y": {
+                  "fieldName": "numero_vendas",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "hideLabels": false,
+                    "hideTitle": false
+                  }
+                },
+                "color": {
+                  "fieldName": "material_name",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "size": {
+                  "fieldName": "countdistinct(material_name)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "label": {
+                  "show": false
+                },
+                "extra": [
+                  {
+                    "fieldName": "material_name"
+                  }
+                ]
+              },
+              "mark": {
+                "size": -2.5
               }
             }
           },
           "position": {
             "x": 0,
-            "y": 0,
-            "width": 1,
-            "height": 2
+            "y": 17,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "fc169626",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "03f4240e",
+                  "fields": [
+                    {
+                      "name": "total_entregas",
+                      "expression": "`total_entregas`"
+                    },
+                    {
+                      "name": "Transportadora",
+                      "expression": "`Transportadora`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "total_entregas",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "Transportadora",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "x-reversed"
+                    }
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "TOTAL DE ENTREGAS"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 66,
+            "width": 3,
+            "height": 9
           }
         }
       ],
-      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+      "pageType": "PAGE_TYPE_CANVAS"
     }
   ],
   "uiSettings": {
