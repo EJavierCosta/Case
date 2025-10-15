@@ -88,13 +88,14 @@ Case/
 │   └── job_databricks.jpg      # print job databricks
 │    
 ├── workflow/                   
-│   ├── workflow_n8n.json    # json workflow do n8n para reprodução.
-│   └── workflow_n8n.jpg     # print workflow n8n
+│   ├── workflow_n8n.json     # json workflow do n8n para reprodução.
+│   └── workflow_n8n.jpg      # print workflow n8n
 │  
-├── analise.ipynb            # notebook com os codigos em pyspark para análise
-├── ingestor.ipynb           # notebook com os codigos de extração csv
-├── utils.py                 # funções python
-├── Case_Gocase.drawio       # arquitetura
+├── analise.ipynb              # notebook com os codigos em pyspark para análise
+├── ingestor.ipynb             # notebook com os codigos de extração csv
+├── utils.py                   # funções python
+├── Case_Gocase.drawio         # arquitetura
+├── Ralatorio_n8n_Gocase.pdf   # exemplo de ralatório gerado pelo workflow do n8n
 └── README.md
 
 ```
