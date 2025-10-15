@@ -20,3 +20,7 @@ def spark_df_to_json_serializable(df, limit=100):
         
     # Converte a string JSON de volta para um objeto Python (lista de dicionários)
     return json.loads(json_string)
+
+def to_tabela_delta(df, tabela):
+    # Salva um DataFrame Spark em um caminho de tabela Delta.
+    df.write.format("delta").mode("overwrite").saveAsTable(f"transacional.case_gocase.{tabela}")
