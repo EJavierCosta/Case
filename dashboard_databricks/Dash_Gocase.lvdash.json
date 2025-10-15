@@ -1,24 +1,10 @@
 {
   "datasets": [
     {
-      "name": "1307b493",
-      "displayName": "analise_frete",
+      "name": "e71fcf5f",
+      "displayName": "vendas_diarias",
       "queryLines": [
-        "select * from transacional.case_gocase.demanda_historica limit 100"
-      ]
-    },
-    {
-      "name": "12b77158",
-      "displayName": "analise_frete",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.analise_frete"
-      ]
-    },
-    {
-      "name": "24a849fd",
-      "displayName": "analise_frete_dia",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.analise_frete_dia"
+        "SELECT * FROM transacional.case_gocase.vendas_diarias"
       ]
     },
     {
@@ -29,10 +15,10 @@
       ]
     },
     {
-      "name": "b034a725",
-      "displayName": "df_itens",
+      "name": "12b77158",
+      "displayName": "analise_frete",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.df_itens"
+        "SELECT * FROM transacional.case_gocase.analise_frete"
       ]
     },
     {
@@ -43,24 +29,10 @@
       ]
     },
     {
-      "name": "20f2ea64",
-      "displayName": "df_supply",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.df_supply"
-      ]
-    },
-    {
       "name": "2ef6821a",
       "displayName": "faturamento_por_categoria",
       "queryLines": [
         "SELECT * FROM transacional.case_gocase.faturamento_por_categoria"
-      ]
-    },
-    {
-      "name": "a083c8e5",
-      "displayName": "faturamento_por_produto",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.faturamento_por_produto"
       ]
     },
     {
@@ -71,17 +43,10 @@
       ]
     },
     {
-      "name": "f8af20fd",
-      "displayName": "pedidos",
+      "name": "20f2ea64",
+      "displayName": "df_supply",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.pedidos"
-      ]
-    },
-    {
-      "name": "c924d291",
-      "displayName": "produtos_ruptura_unicos",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.produtos_ruptura_unicos"
+        "SELECT * FROM transacional.case_gocase.df_supply"
       ]
     },
     {
@@ -92,13 +57,6 @@
       ]
     },
     {
-      "name": "f6eb1850",
-      "displayName": "ruptura_critica_faturamento_top20",
-      "queryLines": [
-        "SELECT * FROM transacional.case_gocase.ruptura_critica_faturamento_top20"
-      ]
-    },
-    {
       "name": "763b5c51",
       "displayName": "vendas",
       "queryLines": [
@@ -106,10 +64,52 @@
       ]
     },
     {
-      "name": "e71fcf5f",
-      "displayName": "vendas_diarias",
+      "name": "a083c8e5",
+      "displayName": "faturamento_por_produto",
       "queryLines": [
-        "SELECT * FROM transacional.case_gocase.vendas_diarias"
+        "SELECT * FROM transacional.case_gocase.faturamento_por_produto"
+      ]
+    },
+    {
+      "name": "f8af20fd",
+      "displayName": "pedidos",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.pedidos"
+      ]
+    },
+    {
+      "name": "b034a725",
+      "displayName": "df_itens",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.df_itens"
+      ]
+    },
+    {
+      "name": "c924d291",
+      "displayName": "produtos_ruptura_unicos",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.produtos_ruptura_unicos"
+      ]
+    },
+    {
+      "name": "1307b493",
+      "displayName": "analise_frete",
+      "queryLines": [
+        "select * from transacional.case_gocase.demanda_historica limit 100"
+      ]
+    },
+    {
+      "name": "24a849fd",
+      "displayName": "analise_frete_dia",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.analise_frete_dia"
+      ]
+    },
+    {
+      "name": "f6eb1850",
+      "displayName": "ruptura_critica_faturamento_top20",
+      "queryLines": [
+        "SELECT * FROM transacional.case_gocase.ruptura_critica_faturamento_top20"
       ]
     }
   ],
@@ -158,8 +158,8 @@
                 }
               },
               "frame": {
-                "title": "",
-                "showTitle": false
+                "title": "Pedidos por dia",
+                "showTitle": true
               }
             }
           },
@@ -316,7 +316,7 @@
           "position": {
             "x": 0,
             "y": 18,
-            "width": 3,
+            "width": 2,
             "height": 7
           }
         },
@@ -411,9 +411,9 @@
             }
           },
           "position": {
-            "x": 3,
+            "x": 2,
             "y": 18,
-            "width": 3,
+            "width": 2,
             "height": 7
           }
         },
@@ -895,15 +895,15 @@
                   "datasetName": "03f4240e",
                   "fields": [
                     {
-                      "name": "sum(percentual_atrasos)",
-                      "expression": "SUM(`percentual_atrasos`)"
+                      "name": "percentual_atrasos",
+                      "expression": "`percentual_atrasos`"
                     },
                     {
                       "name": "Transportadora",
                       "expression": "`Transportadora`"
                     }
                   ],
-                  "disaggregated": false
+                  "disaggregated": true
                 }
               }
             ],
@@ -912,7 +912,7 @@
               "widgetType": "bar",
               "encodings": {
                 "x": {
-                  "fieldName": "sum(percentual_atrasos)",
+                  "fieldName": "percentual_atrasos",
                   "scale": {
                     "type": "quantitative"
                   }
@@ -926,6 +926,9 @@
                     }
                   }
                 }
+              },
+              "frame": {
+                "showTitle": false
               }
             }
           },
@@ -941,7 +944,7 @@
             "name": "28c0385d",
             "multilineTextboxSpec": {
               "lines": [
-                "# <span style=\"text-align:center;display:block\"><span style=\"font-size:60px;line-height:1.5\"> </span><span style=\"font-size:60px;line-height:1.5\">Relatório Mensal de vendas, estoque e logística</span></span>"
+                "# <span style=\"text-align:center;display:block\"><span style=\"font-size:60px;line-height:1.5\"> </span><span style=\"font-size:60px;line-height:1.5\">Relatório mensal de vendas, estoque e logística</span></span>"
               ]
             }
           },
@@ -1094,6 +1097,58 @@
             "y": 57,
             "width": 3,
             "height": 12
+          }
+        },
+        {
+          "widget": {
+            "name": "e98bd3f6",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "24a849fd",
+                  "fields": [
+                    {
+                      "name": "tipo_frete",
+                      "expression": "`tipo_frete`"
+                    },
+                    {
+                      "name": "sum(total_pedidos)",
+                      "expression": "SUM(`total_pedidos`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "tipo_frete",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "sum(total_pedidos)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Total de pedidos "
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 18,
+            "width": 2,
+            "height": 7
           }
         }
       ],
